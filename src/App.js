@@ -1,7 +1,7 @@
 import "./App.css";
 import { Component } from "react";
 import CardList from "./components/card-list/card-list.component";
-import SearchBox from "./components/search-box/Search-box.component";
+import SearchBox from "./components/search-box/search-box.component";
 class App extends Component {
   constructor() {
     super();
@@ -35,6 +35,7 @@ class App extends Component {
   };
 
   render() {
+    // eslint-disable-next-line
     const { monsters, searchField } = this.state;
     const { onSearchChange } = this;
 
@@ -47,10 +48,11 @@ class App extends Component {
 
     return (
       <div className="App">
+      <h1 className="app-title">Monsters</h1>
         <SearchBox
           onChangeHandler={onSearchChange}
           placeholder="search monsters"
-          className="search-box"
+          className="monsters-search-box"
         />
         <CardList monsters={filteredMonsters} />
       </div>
